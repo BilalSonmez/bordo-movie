@@ -5,7 +5,7 @@ const routesAdmin = FlowRouter.group({
   name: 'admin',
   triggersEnter:[function () {
     Meteor.defer(function () {
-      $('body').addClass('bg-light');
+      $('body').css({"background-color":"#8D8DAA"});
     });      
   }], //[MustSignIn, IsAdmin] auth kısmı tamamlandıktan sonra aktif edilecek.
 });
