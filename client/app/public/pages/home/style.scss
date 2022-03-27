@@ -1,0 +1,73 @@
+@import '../../../../style.scss';
+
+
+.brd-homepage-main {
+  a {
+    text-decoration: none;
+    .img-caption {
+      color: black;
+    }
+  }
+  a:hover{
+    .img-caption {
+      color: $base-color;
+    }
+  }
+  .img-caption {
+    margin: 0.5rem 2rem;
+    color: #fff;
+    text-align: center;
+  }
+  .pagination .page-item .page-link {
+    color: black;
+  }
+  .pagination .page-item:hover {
+    background-color: $base-color;
+    .page-link {
+      background-color: $base-color;
+      color: white;
+    }
+  }
+}
+
+.brd-top-slider {
+  margin: 2rem 0;
+  img {
+    border: none;
+    padding: 0;
+  }
+}
+
+.brd-homepage {
+  margin-top: 5rem;
+  .brd-homepage-sidebar {
+    background-color: $dark-base-color;
+    border-radius: 0.8rem;
+    margin: 0;
+    padding: 2rem 0;
+    color: white;
+    h4 {
+      padding-left: 1.5rem;
+    }
+  }
+  .sidebar-list {
+    margin: 1rem 0;
+    overflow: auto;
+    text-decoration: none;
+    a {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 1.6rem;
+      margin-right: 1.5rem;
+      border-top-right-radius: 1rem;
+      display: block;
+      color: white;
+      text-decoration: none;
+    }
+    a:hover {
+      background-color: white;
+      color: $base-color;
+      transition: background-color 0.5s, color 0.5s;
+    }
+  }
+}

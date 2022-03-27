@@ -1,0 +1,32 @@
+@import '../../style.scss';
+
+footer {
+  background: rgb(48,1,0);
+  background: linear-gradient(90deg, rgba(96,1,0,1) 0%, rgba(48,1,0,1) 30%);
+  color: white;
+  text-decoration: none;
+  margin-top: 2rem;
+  .row {
+    .col-md-4 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      li {
+        margin: 0.7rem 0;
+      } 
+    }
+    .brands a {
+      margin-left: 0.7rem;
+      margin-right: 0.7rem;
+    }
+    a {
+      color: #cfcfcf;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      text-decoration: none;
+      margin: 10rem 0;
+    }
+    a:hover {
+      color: white;
+    }
+  }
+}

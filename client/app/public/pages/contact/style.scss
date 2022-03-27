@@ -2,8 +2,11 @@
 
 .brd-contact-form {
   color: $base-color;
-  .form-group {
-    margin: 10px 5px;
+  label {
+    font-weight: 600;
+  }
+  .form-item {
+    margin: 0.3rem 0;
   }
   .brd-btn {
     margin-top: 1rem;
@@ -22,8 +25,9 @@
   background-color: $base-color;
   border-radius: 0.35rem;
   color: white;
+  padding-top: 2rem;
+  padding-bottom: 8rem;
   ul {
-    margin-top: 1rem;
     list-style: none;
     li {
       margin-top: 1rem;
