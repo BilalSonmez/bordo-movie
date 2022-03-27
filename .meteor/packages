@@ -46,3 +46,4 @@ bordo:loading-line
 bordo:slugify
 bordo:last-edit-user
 bordo:create-user
+session

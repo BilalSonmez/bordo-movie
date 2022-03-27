@@ -1,0 +1,1 @@
+import Tagify from '@yaireo/tagify'
