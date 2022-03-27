@@ -4,9 +4,8 @@ Template.adminModalCategoryEdit.onRendered(function () {
   const self = this;
   this.autorun(function () {
     AppUtil.refreshTokens.get("editCategory");
-    this.editdata = Session.get("editData");
-    $("input#brdadminModalCategoryEdit_name").val(this.editdata.title);
-    $("textarea#brdadminModalCategoryEdit_description").val(this.editdata.description);
+    $("input#brdadminModalCategoryEdit_name").val(Session.get("editData").title);
+    $("textarea#brdadminModalCategoryEdit_description").val(Session.get("editData").description);
   });
 
   const modalElement = document.getElementById("brdadminModalCategoryEdit");
