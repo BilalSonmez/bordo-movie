@@ -1,0 +1,9 @@
+<template name="adminLayoutDefault">
+  <div class="adminLayoutDefault d-flex flex-column min-vh-100">
+    {{> adminComponentNavbar}} {{> adminComponentSidebar}}
+    <div class="container-fluid content">
+      <div class="flex-fill px-0">{{> Template.dynamic template=page}}</div>
+    </div>
+    {{> adminComponentFooter}}
+  </div>
+</template>
