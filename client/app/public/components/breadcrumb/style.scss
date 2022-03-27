@@ -1,0 +1,17 @@
+@import '../../../../style.scss';
+
+.header {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  .breadcrumb {
+    .breadcrumb-item {
+      color: $base-color;
+    }
+    .active {
+      color: #6c757d!important;
+    }
+    li{
+      cursor: pointer;
+    }
+  }
+}
