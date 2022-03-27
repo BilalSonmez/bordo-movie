@@ -1,0 +1,70 @@
+<template name="componentsNavbar">
+  <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-bordo">
+    <div class="container">
+      <a class="brd-navbar-brand" href="/">
+        Bordo <span>Movie</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-md-auto gap-2">
+          <li class="brd-nav-item rounded">
+            <a class="brd-nav-link{{#if eq link 'public.home'}} active{{/if}}" aria-current="page" href="/">
+              <i class="fa-solid fa-house me-2"></i>
+              Home
+            </a>
+          </li>
+          <li class="brd-nav-item rounded">
+            <a class="brd-nav-link{{#if eq link 'public.category'}} active{{/if}}" href="/category">
+              <i class="fa-solid fa-bars me-2"></i>
+              Category
+            </a>
+          </li>
+          <li class="brd-nav-item rounded">
+            <a class="brd-nav-link{{#if eq link 'public.about'}} active{{/if}}" href="/about">
+              <i class="fa-solid fa-users me-2"></i>
+              About
+            </a>
+          </li>
+          <li class="brd-nav-item rounded">
+            <a class="brd-nav-link{{#if eq link 'public.contact'}} active{{/if}}" href="/contact">
+              <i class="fa-solid fa-phone me-2"></i>
+              Contact
+            </a>
+          </li>
+          <li class="brd-nav-item rounded">
+            <a class="brd-nav-link{{#if eq link 'public.auth'}} active{{/if}}" href="/auth">
+              <i class="fa-solid fa-user me-2"></i>
+              Sign In
+            </a>
+          </li>
+          <!--li class="brd-nav-item dropdown rounded">
+            <a class="brd-nav-link{{#if eq link 'public.auth'}} active{{/if}} dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user me-2"></i>Profile</a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Account</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </li-->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <script>
+  $(function(){
+    $(window).scroll(function(){
+      if($(this).scrollTop()!=0){
+        $('.navbar').addClass('navbar-light bg-light');
+        $('.navbar').removeClass('navbar-dark bg-bordo');
+      } else {
+        $('.navbar').addClass('navbar-dark bg-bordo');
+        $('.navbar').removeClass('navbar-light bg-light');
+      }
+    });
+  });
+  </script>
+</template>

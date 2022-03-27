@@ -1,6 +1,6 @@
 <template name="publicLayoutDefault">
-    <div class="row">
-        <div class="col-6">#sa</div>
-        <div class="col-6">#as</div>
+    {{>componentsNavbar}}
+    <div class="container">
+        {{> Template.dynamic template=page}}
     </div>
 </template>
