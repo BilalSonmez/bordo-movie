@@ -1,0 +1,42 @@
+@import '../../../../style.scss';
+
+.brd-contact-form {
+  color: $base-color;
+  .form-group {
+    margin: 10px 5px;
+  }
+  .brd-btn {
+    margin-top: 1rem;
+    padding: 1.25rem 0;
+    width: 100%;
+    background-color: white;
+    color: $base-color;
+  }
+  .brd-btn:hover {
+    background-color: $dark-base-color;
+    color: white;
+  }
+}
+
+.brd-contact-data {
+  background-color: $base-color;
+  border-radius: 0.35rem;
+  color: white;
+  ul {
+    margin-top: 1rem;
+    list-style: none;
+    li {
+      margin-top: 1rem;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      svg {
+        margin-right: 0.5rem;
+      }
+    }
+    a:hover {
+      color: $light-base-color;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+::-webkit-scrollbar-track {
+  background: #FFF!important;
+}
+
+.bg-bordo {
+  background-color: #300100;
+}
+
+.navbar-nav .brd-nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #FFF;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+
+.navbar .brd-navbar-brand {
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.35rem;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.navbar.navbar-dark .brd-nav-link.active {
+  background-color: #F0F0F0F0;
+  color: #600100;
+  border-radius: 0.25rem;
+}
+
+.navbar.navbar-light .brd-nav-link.active {
+  background-color: #600100;
+  color: #FFF;
+  border-radius: 0.25rem;
+}
+
+.navbar.navbar-dark .navbar-nav .brd-nav-link:hover {
+  color: #600100;
+}
+
+.navbar.navbar-light .navbar-nav .brd-nav-link:hover {
+  color: #FFF;
+}
+
+.navbar.navbar-dark .navbar-nav .brd-nav-item:hover {
+  background-color: #F0F0F0F0;
+}
+
+.navbar.navbar-light .navbar-nav .brd-nav-item:hover {
+  background-color: #600100;
+}
+
+.navbar.navbar-dark .brd-nav-link {
+  color: #FFF;
+}
+
+.navbar.navbar-light .brd-nav-link {
+  color: #600100;
+}
+
+.navbar.navbar-dark .brd-navbar-brand {
+  color: #FFF;
+}
+
+.navbar.navbar-light .brd-navbar-brand {
+  color: #600100;
+}
