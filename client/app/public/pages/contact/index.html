@@ -1,3 +1,55 @@
 <template name="publicPagesContact">
-  #contact
+  {{>publicComponentsBreadcrumb title="Contact" subTitle=null}}
+  <div class="container">
+    <div class="row">
+      <h3>Contact Us</h3>
+      <div class="col-6 brd-contact-form">
+        <form id="contact_send" class="row my-3">
+          <div class="col-6">
+            <label for="brd_name">Name</label>
+            <input name="brd_name" id="brd_name" type="text" class="form-control" required>
+          </div>
+          <div class="col-6">
+            <label for="brd_surname">Surname</label>
+            <input name="brd_surname" id="brd_surname" type="text" class="form-control" required>
+          </div>
+          <div class="col-12">
+            <label for="brd_email">E-Mail</label>
+            <input name="brd_email" id="brd_email" type="email" class="form-control" required>
+          </div>
+          <div class="col-12">
+            <label for="brd_surname">Message</label>
+            <textarea name="brd_surname" id="brd_surname" rows="5" class="form-control" required></textarea>
+          </div>
+          <div class="col-12">
+            <button class="btn brd-btn">Send</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-6 brd-contact-data">
+        <ul>
+          <li>
+            <a href="tel:+905465917099">
+              <i class="fa-solid fa-phone"></i> +90 546 591 7099
+            </a>
+          </li>
+          <li>
+            <a href="tel:+905376028445">
+              <i class="fa-solid fa-phone"></i> +90 537 602 8445
+            </a>
+          </li>
+          <li>
+            <a href="mailto:info@bordomovie.com">
+              <i class="fa-solid fa-envelope"></i> info@bordomovie.com
+            </a>
+          </li>
+          <li>
+            <a href="https://goo.gl/maps/VBSJzhUQGvTCQLQt5" target="_blank">
+              <i class="fa-solid fa-location-dot"></i> 2411 W Sahara Ave, Las Vegas, NV 89102, Amerika Birleşik Devletleri
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </template>
