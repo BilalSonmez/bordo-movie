@@ -17,7 +17,7 @@ Template.adminModalCategoryCreate.onRendered(function () {
 Template.adminModalCategoryCreate.events({
   "submit form#brdCategoryCreateForm": function (event, template) {
     event.preventDefault();
-    let quilldata = template.quill.getContents();
+
     const name = event.target.name.value;
     const description = template.quill.root.innerHTML;
 

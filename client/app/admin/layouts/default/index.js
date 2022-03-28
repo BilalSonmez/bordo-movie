@@ -1,6 +1,6 @@
 Template.adminLayoutDefault.onCreated(function () {
   this.state = new ReactiveDict(null, {
-          
+  
   });
 });
 
@@ -13,7 +13,4 @@ Template.adminLayoutDefault.onRendered(function () {
 });
 
 Template.adminLayoutDefault.events({
-  'click #event': function (event,template) {
-
-  }
 });
