@@ -3,39 +3,39 @@
 
   <div class="container ms-4 mt-4">
     <div class="d-flex flex-row row justify-content-start row-cols-1 row-cols-sm-1 row-cols-md-2">
-     
       <div class="col-md-8">
-          <h4 class="text-center mt-4">Category List</h4> 
+        <h4 class="text-center mt-4">Category List</h4>
         <hr />
         <div class="table-responsive">
-        <table class="table table-striped align-middle">
-          <thead>
-            <tr  class="text-center">
-              <th scope="col">Index</th>
-              <th scope="col">Category Name</th>
-              <th scope="col">Description</th>
-              <th scope="col">Edit</th>
-              <th scope="col">Remove</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each _categories}}
-            <tr>
-              
-              <td class="fw-bold">{{@index}}</td>
-              <td>{{title}}</td>
-              <td style="word-break: break-all">{{description}}</td>
-              <td class="text-center" style="width:10%">
-                <button class="btn btn-secondary btn-sm editbtn categortEdit" data-bs-toggle="modal" data-bs-target="#brdadminModalCategoryEdit">
-                  <i class="fa-solid fa-file-pen"></i>
-                </button></td>
-              <td class="text-center" style="width:10%"><button class="btn btn-danger btn-sm deletebtn categortDelete"><i class="fas fa-trash"></i></button></td>
-              
-            </tr>
-            {{/each}}
-          </tbody>
-        </table>
-      </div>
+          <table class="table table-striped align-middle">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">Index</th>
+                <th scope="col">Category Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Remove</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each _categories}}
+              <tr>
+                <td class="fw-bold">{{add @index}}</td>
+                <td>{{title}}</td>
+                <td style="word-break: break-all">{{clearHTML description}}</td>
+                <td class="text-center" style="width: 10%">
+                  <button class="btn btn-secondary btn-sm editbtn categortEdit" data-bs-toggle="modal" data-bs-target="#brdadminModalCategoryEdit">
+                    <i class="fa-solid fa-file-pen"></i>
+                  </button>
+                </td>
+                <td class="text-center" style="width: 10%">
+                  <button class="btn btn-danger btn-sm deletebtn categortDelete"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="col-md-2">
@@ -46,7 +46,5 @@
     </div>
   </div>
 
-  {{/let}}
-  {{> adminModalCategoryEdit}}
-  {{> adminModalCategoryCreate}}
+  {{/let}} {{> adminModalCategoryEdit}} {{> adminModalCategoryCreate}}
 </template>

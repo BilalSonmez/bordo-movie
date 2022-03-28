@@ -6,7 +6,6 @@ Template.adminPageCategory.onCreated(function () {
 
 Template.adminPageCategory.onRendered(function () {
   const self = this;
-
   this.autorun(function () {
     AppUtil.refreshTokens.get("category");
     Meteor.call("category.list", {}, function (error, result) {
@@ -22,7 +21,8 @@ Template.adminPageCategory.onRendered(function () {
 Template.adminPageCategory.events({
   "click .categortEdit": function () {
     Session.set("editData", this);
-    AppUtil.refreshTokens.set("editCategory", Random.id());
+    console.log(Session.get("editData"));
+    AppUtil.refreshTokens.set("category", Random.id());
   },
   "click .categortDelete": function (event, template) {
     event.preventDefault();
@@ -42,4 +42,9 @@ Template.adminPageCategory.events({
       }
     );
   },
+});
+
+Template.adminPageCategory.onDestroyed(function () {
+  Session.set("editData", undefined);
+  console.log(Session.get("editData"));
 });
