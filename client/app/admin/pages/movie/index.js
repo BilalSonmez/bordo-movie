@@ -39,6 +39,11 @@ Template.adminPageMovie.events({
   "submit form#brdMovieDataCreateForm": function (event, template) {
     event.preventDefault();
     const imdbId = event.target.movieInputId.value;
+    
+    if (imdbId=="") {
+      ErrorHandler.show("Lütfen imdb idsini giriniz.");
+      return;
+    }
     var requestOptions = {
       method: "GET",
       redirect: "follow",
@@ -46,12 +51,12 @@ Template.adminPageMovie.events({
     fetch("https://imdb-api.com/en/API/Title/k_3axgnwfu/" + String(imdbId), requestOptions)
       .then((response) => response.text())
       .then((result) => template.state.set("movie", JSON.parse(result)))
-      .catch((error) => console.log("error", error));
+      .catch((error) => ErrorHandler.show("Apiden veri çekerken bir hatayla karşılaşıldı."));
 
     fetch("https://imdb-api.com/en/API/Images/k_3axgnwfu/" + String(imdbId) +"/Short", requestOptions)
       .then((response) => response.text())
       .then((result) => template.state.set("posters", JSON.parse(result)))
-      .catch((error) => console.log("error", error));
+      .catch((error) => ErrorHandler.show("Apiden veri çekerken bir hatayla karşılaşıldı."));
 
     event.target.reset();
     AppUtil.refreshTokens.set("movie");
