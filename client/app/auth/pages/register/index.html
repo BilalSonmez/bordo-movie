@@ -1,5 +1,5 @@
-<template name="authPagesLogin">
-  {{>publicComponentsBreadcrumb title="Sign In" subTitle="Auth"}}
+<template name="authPagesRegister">
+  {{>publicComponentsBreadcrumb title="Sign Up" subTitle="Auth"}}
   <div class="container">
     <div class="brd-auth-panel d-flex justify-content-center">
       <div class="row">
@@ -10,13 +10,17 @@
         </div>
         <div class="col-12">
           <form>
-            <h3>Sign In</h3>
+            <h3>Sign Up</h3>
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" required>
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" class="form-control" required>
             <label for="email">E-Mail</label>
             <input type="email" id="email" class="form-control" required>
             <label for="password">Password</label>
             <input type="password" id="password" class="form-control" required>
-            <button class="btn btn-bordo">Sign In</button>
-            <a class="btn btn-bordo-second" href="/auth/signup">Sign Up</a>
+            <button class="btn btn-bordo">Sign Up</button>
+            <a class="btn btn-bordo-second" href="/auth/signin">Sign In</a>
           </form>
         </div>
       </div>

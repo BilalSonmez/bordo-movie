@@ -90,13 +90,13 @@
       </div>
       <div class="col-md-3 brd-homepage-sidebar">
         <h4>Category</h4>
+        {{#let _category = (state.get 'category') }}
         <div class="sidebar-list">
-          <a href="#" class="sidebar-list-item">Action</a>
-          <a href="#" class="sidebar-list-item">Adventure</a>
-          <a href="#" class="sidebar-list-item">Comedy</a>
-          <a href="#" class="sidebar-list-item">Drama</a>
-          <a href="#" class="sidebar-list-item">Romance</a>
+          {{#each _category}}
+          <a href="/category/{{_id}}" class="sidebar-list-item">{{title}}</a>
+          {{/each}}
         </div>
+        {{/let}}
         <h4>Tags</h4>
         <div class="sidebar-list">
           <a href="#" class="sidebar-list-item">Action</a>
