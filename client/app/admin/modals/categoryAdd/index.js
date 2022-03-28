@@ -4,9 +4,9 @@ import Quill from "quill";
 Template.adminModalCategoryCreate.onRendered(function () {
   const self = this;
   //Quill start code
-  // self.quill = new Quill('#editor-container', {
-  //   theme: 'snow',
-  // });
+  self.quill = new Quill('#editor-container', {
+    theme: 'snow',
+  });
   const modalElement = document.getElementById("brdadminModalCategoryCreate");
   this.modal = new bootstrap.Modal(modalElement);
 
@@ -19,11 +19,11 @@ Template.adminModalCategoryCreate.events({
   "submit form#brdCategoryCreateForm": function (event, template) {
     event.preventDefault();
 
-    //Quill datası nasıl saklanacak ve kullanılacak??
-    //let quilldata = template.quill.getContents();
-
+    // Quill datası nasıl saklanacak ve kullanılacak??
+    let quilldata = template.quill.getContents();
+    console.log(template.quill.root.innerHTML);
     const name = event.target.name.value;
-    const description = event.target.description.value;
+    const description = template.quill.root.innerHTML;
 
     const obj = {
       category: {

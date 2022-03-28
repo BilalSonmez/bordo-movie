@@ -22,9 +22,9 @@
             {{#each _categories}}
             <tr>
               
-              <td class="fw-bold">{{@index}}</td>
+              <td class="fw-bold">{{add @index}}</td>
               <td>{{title}}</td>
-              <td style="word-break: break-all">{{description}}</td>
+              <td style="word-break: break-all">{{clearHTML description}}</td>
               <td class="text-center" style="width:10%">
                 <button class="btn btn-secondary btn-sm editbtn categortEdit" data-bs-toggle="modal" data-bs-target="#brdadminModalCategoryEdit">
                   <i class="fa-solid fa-file-pen"></i>

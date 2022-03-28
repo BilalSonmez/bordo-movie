@@ -2,6 +2,7 @@ import SimpleSchema from 'simpl-schema';
 
 new ValidatedMethod({
   name: 'category.update',
+  //mixin admin kontrolü eklenecek.
   validate: new SimpleSchema({
     _id: SimpleSchema.RegEx.Id,
     category: CategorySchema
