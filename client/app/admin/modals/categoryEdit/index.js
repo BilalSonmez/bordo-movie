@@ -1,16 +1,15 @@
 import bootstrap from "bootstrap";
 import Quill from "quill";
 
-
 Template.adminModalCategoryEdit.onRendered(function () {
   const self = this;
-  self.quill = new Quill('#edit-editor-container', {
-    theme: 'snow',
+  self.quill = new Quill("#edit-editor-container", {
+    theme: "snow",
   });
   this.autorun(function () {
     AppUtil.refreshTokens.get("category");
     if (Session.get("editData")) {
-      self.quill.root.innerHTML=Session.get("editData").description;
+      self.quill.root.innerHTML = Session.get("editData").description;
       $("input#brdadminModalCategoryEdit_name").val(Session.get("editData").title);
     }
   });
@@ -28,7 +27,6 @@ Template.adminModalCategoryEdit.events({
     const id = Session.get("editData")._id;
     const name = event.target.name.value;
     const description = template.quill.root.innerHTML;
-    console.log(description);
     const obj = {
       _id: id,
       category: {

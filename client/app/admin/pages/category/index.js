@@ -44,7 +44,7 @@ Template.adminPageCategory.events({
   },
 });
 
-Template.adminPageCategory.onDestroyed(function(){
-  Session.set('editData', undefined);
+Template.adminPageCategory.onDestroyed(function () {
+  Session.set("editData", undefined);
   console.log(Session.get("editData"));
 });
