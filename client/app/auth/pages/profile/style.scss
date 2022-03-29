@@ -1,0 +1,22 @@
+@import '../../../../style.scss';
+
+.brd-profile-panel {
+  .brd-profile-info {
+    background-color: $dark-base-color;
+    border-radius: 1rem;
+    color: white;
+    padding: 3rem;
+  }
+  .brd-profile-info {
+    .brd-profile-image {
+      padding: 2rem;
+      .brd-pp-image {
+        border: 10px;
+        border-radius: 1rem;
+        border-color: $base-color;
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+}
