@@ -3,9 +3,12 @@ import SimpleSchema from 'simpl-schema';
 new ValidatedMethod({
   name: 'movie.list',
   validate: new SimpleSchema({
+    options: { type: QueryOptionsSchema, optional: true }
   }).validator(),
-  run: function () {
+  run: function (data) {
     this.unblock();
-    return Movie.find({}).fetch();
+    const { options } = data;
+
+    return Fetch(Movie, {}, options, 'movie');
   }
 });

@@ -9,12 +9,12 @@ Template.publicPagesHome.onCreated(function(){
 Template.publicPagesHome.onRendered(function () {
   const self = this;
   this.autorun(function() {
-    Meteor.call('category.list', {}, function(error, success) { 
+    Meteor.call('category.list', {}, function(error, result) { 
       if (error) { 
         console.log('error', error); 
         return
       }
-      self.state.set('category', success);
+      self.state.set('category', result.category);
     });
   });
 });

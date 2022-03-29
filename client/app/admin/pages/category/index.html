@@ -18,9 +18,9 @@
               </tr>
             </thead>
             <tbody>
-              {{#each _categories}}
+              {{#each _categories.category}}
               <tr>
-                <td class="fw-bold">{{add @index}}</td>
+                <td class="fw-bold">{{index_count @index _categories.options.pagination}}</td>
                 <td>{{title}}</td>
                 <td style="word-break: break-all">{{clearHTML description}}</td>
                 <td class="text-center" style="width: 10%">
