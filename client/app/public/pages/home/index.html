@@ -1,92 +1,37 @@
 <template name="publicPagesHome">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  {{#let _topMovie = (state.get 'topMovie') _recentMovie = (state.get 'recentMovie')}}
   <div class="container brd-homepage">
     <h3>Top Recent</h3>
     <div class="row">
       <div class="col-md-12 brd-top-slider">
         <div class="owl-carousel owl-theme">
+          {{#each _recentMovie.movie}}
           <div class="item">
-            <img src="https://image.tmdb.org/t/p/original/qJ2tW6WMUDux911r6m7haRef0WH.jpg" alt="test" class="img-thumbnail rounded">
+            <a href="/movie/{{_id}}">
+              <img src="{{cover_url}}" alt="{{title}}" class="img-thumbnail rounded">
+            </a>
           </div>
-          <div class="item">
-            <img src="https://image.tmdb.org/t/p/original/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg" alt="test" class="img-thumbnail rounded">
-          </div>
-          <div class="item">
-            <img src="https://image.tmdb.org/t/p/original/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg" alt="test" class="img-thumbnail rounded">
-          </div>
-          <div class="item">
-            <img src="https://image.tmdb.org/t/p/original/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg" alt="test" class="img-thumbnail rounded">
-          </div>
-          <div class="item">
-            <img src="https://image.tmdb.org/t/p/original/hJVa0sEayco7qaDMnkTyZnQi8yB.jpg" alt="test" class="img-thumbnail rounded">
-          </div>
-      </div>
+          {{/each}}
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-9 brd-homepage-main">
         <h3>Top Movie</h3>
         <div class="row">
+          {{#each _topMovie.movie}}
           <div class="col-md-4">
-            <a href="#">
-              <img src="https://image.tmdb.org/t/p/original/qJ2tW6WMUDux911r6m7haRef0WH.jpg" alt="test" class="img-thumbnail rounded">
+            <a href="/movie/{{_id}}">
+              <img src="{{cover_url}}" alt="{{title}}" class="img-thumbnail rounded">
               <div class="img-caption">
-                <h5>Batman</h5>
+                <h5>{{title}}</h5>
               </div>
             </a>
           </div>
-          <div class="col-md-4">
-            <a href="#">
-              <img src="https://image.tmdb.org/t/p/original/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg" alt="test" class="img-thumbnail rounded">
-              <div class="img-caption">
-                <h5>The Lord of the Ring: Return the King</h5>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="#">
-              <img src="https://image.tmdb.org/t/p/original/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg" alt="test" class="img-thumbnail rounded">
-              <div class="img-caption">
-                <h5>Spirited Away</h5>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="#">
-              <img src="https://image.tmdb.org/t/p/original/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg" alt="test" class="img-thumbnail rounded">
-              <div class="img-caption">
-                <h5>Schindler's List</h5>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="#">
-              <img src="https://image.tmdb.org/t/p/original/hJVa0sEayco7qaDMnkTyZnQi8yB.jpg" alt="test" class="img-thumbnail rounded">
-              <div class="img-caption">
-                <h5>Hababam Sınıfı</h5>
-              </div>
-            </a>
-          </div>
+          {{/each}}
         </div>
-        <div class="row">
-          <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        {{>componentPagination stateOBJ = (state 'topMovie') stateSTR = 'topMovie' }}
       </div>
       <div class="col-md-3 brd-homepage-sidebar">
         <h4>Category</h4>
@@ -108,6 +53,7 @@
       </div>
     </div>
   </div>
+  {{/let}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     jQuery(document).ready(function($) {

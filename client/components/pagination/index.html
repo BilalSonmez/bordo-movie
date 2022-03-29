@@ -1,0 +1,25 @@
+<template name="componentPagination">
+  {{#let _statePagination=(stateOBJ.get stateSTR)}}
+  {{#if gt (ceil _statePagination.options.pagination.totalCount _statePagination.options.pagination.pageItems) 1}}
+  <div class="row">
+    <nav id="{{stateSTR}}" aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <button class="page-link brd-pagination-previous" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </button>
+        </li>
+          {{#each page_counter _statePagination.options.pagination.totalCount _statePagination.options.pagination.pageItems _statePagination.options.pagination.currentPage}}
+            <li class="page-item {{#if eq _statePagination.options.pagination.currentPage value}}active{{/if}}"><button data-cy="brd-pagination-{{value}}" class="page-link brd-page text-center">{{text}}</button></li>
+          {{/each}}
+        <li class="page-item">
+          <button class="page-link brd-pagination-next" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  {{/if}}
+  {{/let}}
+</template>

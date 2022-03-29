@@ -1,0 +1,25 @@
+@import '../../../../style.scss';
+
+.brd-category-grid {
+  a {
+    text-decoration: none;
+    img {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      transition: filter 2s;
+    }
+  }
+  a:hover{
+    img {
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
+    }
+    .img-caption {
+      color: $base-color;
+    }
+  }
+  .img-caption {
+    color: #fff;
+    text-align: center;
+  }
+}

@@ -27,7 +27,7 @@ Template.adminPageMovie.onRendered(function () {
         ErrorHandler.show(error.message);
         return;
       }
-      self.state.set("categories", result);
+      self.state.set("categories", result.category);
     });
   });
 });
