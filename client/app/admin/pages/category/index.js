@@ -11,7 +11,7 @@ Template.adminPageCategory.onRendered(function () {
     const obj = {
       options: {
         pagination: {
-          currentPage: 3,
+          currentPage: 1,
           pageItems: 10
         },
         filtering: {},
