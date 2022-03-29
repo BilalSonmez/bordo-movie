@@ -1,7 +1,7 @@
 <template name="adminPageMovie">
   <link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
-  {{#let _categories=(state.get 'categories') _movie=(state.get 'movie') _moviePosters=(state.get 'posters')}}
+  {{#let _categories=(state.get 'categories') _movie=(state.get 'movie') _trailer=(state.get 'trailer')}}
   <div class="container m-4 movieContainer">
     <div class="d-flex flex-row row row-cols-1 row-cols-sm-1 row-cols-md-2">
       <div class="col-md-2 border-end text-center">
@@ -16,11 +16,11 @@
           </div>
         </form>
 
-        {{#if _movie.image}}
+        {{#if _movie.posters}}
 
         <div class="mt-5">
           <label class="form-label">Cover :</label>
-          <img src="{{_movie.image}}" class="img-fluid" alt="Movie Cover Image" />
+          <img src="{{_movie.posters.[0].link}}" class="img-fluid" alt="Movie Cover Image" />
         </div>
 
         {{/if}}
@@ -29,7 +29,7 @@
         <form class="row g-3 my-1" id="brdMovieCreateForm">
           <div class="col-md-6">
             <label for="inputId" class="form-label">Imdb ID</label>
-            <input type="text" class="form-control" id="inputId" disabled value="{{_movie.id}}" />
+            <input type="text" class="form-control" id="inputId" disabled value="{{_movie.imDbId}}" />
           </div>
           <div class="col-md-6">
             <label for="inputTitle" class="form-label">Title</label>
@@ -45,7 +45,7 @@
           </div>
           <div class="col-md-8">
             <label for="inputCoverUrl" class="form-label">Cover Url</label>
-            <input type="text" class="form-control" id="inputCoverUrl" value="{{_movie.image}}" />
+            <input type="text" class="form-control" id="inputCoverUrl" value="{{_movie.posters.[0].link}}" />
           </div>
           <div class="col-md-2">
             <label for="inputViews" class="form-label">Views</label>
@@ -55,6 +55,10 @@
             <label for="inputTags" class="form-label">Tags</label>
             <input type="text" class="form-control" id="inputTags" />
           </div>
+          <div class="col-md-12">
+            <label for="inputTrailer" class="form-label">Trailer Link</label>
+            <input type="text" class="form-control" id="inputTrailer" value="{{_trailer.linkEmbed}}"/>
+          </div>
           <div class="col-12 h-50">
             <label for="inputDescription" class="form-label">Description</label>
             <div id="movie-editor"></div>
@@ -63,17 +67,17 @@
         <div class="text-center">
           <label class="form-label text-center mt-3">Posters</label>
         </div>
-        {{#if _moviePosters.items}}
+        {{#if _movie.backdrops}}
 
         <div id="carouselExampleControls" class="carousel slide my-3" data-bs-ride="carousel">
           <div class="carousel-inner">
-            {{#each _moviePosters.items}} {{#if eq @index 0}}
+            {{#each _movie.backdrops}} {{#if eq @index 0}}
             <div class="carousel-item active">
-              <img src="{{image}}" class="d-block movieImages m-auto" alt="..." />
+              <img src="{{link}}" class="d-block movieImages m-auto" alt="..." />
             </div>
             {{else}}
             <div class="carousel-item">
-              <img src="{{image}}" class="d-block movieImages m-auto" alt="..." />
+              <img src="{{link}}" class="d-block movieImages m-auto" alt="..." />
             </div>
             {{/if}} {{/each}}
           </div>
