@@ -1,0 +1,40 @@
+<template name="authPagesProfile">
+  {{>publicComponentsBreadcrumb title="Profile" subTitle="Auth"}}
+  {{#let _userData = currentUser }}
+  <div class="container">
+    <div class="brd-profile-panel">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="brd-profile-info">
+            <div class="brd-profile-image">
+              <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png" class="img img-fluid brd-pp-image">
+            </div>
+            <div class="brd-profile-info-data text-center">
+              <h4>{{_userData.profile.name}} {{_userData.profile.lastName}}</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <form class="row">
+            <div class="col-md-6">
+              <label for="profileName">Name</label>
+              <input type="text" id="profileName" class="form-control" value="{{_userData.profile.name}}" disabled>
+            </div>
+            <div class="col-md-6">
+              <label for="profileSurname">Surname</label>
+              <input type="text" id="profileSurname" class="form-control" value="{{_userData.profile.lastName}}" disabled>
+            </div>
+            <div class="col-md-12">
+              <label for="">E-Mails</label>
+              {{#each _userData.emails}}
+              <input type="text" class="form-control" value="{{address}}" disabled>
+              {{/each}}
+            </div>
+          </form>
+        </div>
+        {{logConsole currentUser}}
+      </div>
+    </div>
+  </div>
+  {{/let}}
+</template>

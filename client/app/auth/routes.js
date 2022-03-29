@@ -7,7 +7,7 @@ const routesAuth = FlowRouter.group({
     Meteor.defer(function () {
       //$('body').css({"background-color":"#8D8DAA"});
     });      
-  }], //[MustSignIn, IsAdmin] auth kısmı tamamlandıktan sonra aktif edilecek.
+  }, MustSignOut],
 });
 
 routesAuth.route('/signin', {
@@ -23,3 +23,15 @@ routesAuth.route('/signup', {
     this.render('publicLayoutDefault', { page: 'authPagesRegister', link: 'auth' });
   }
 });
+
+//Profile Sayfası Ayrı Olucak
+
+FlowRouter.route('/profile', {
+  name: 'profile.main',
+  triggersEnter: [
+    MustSignIn
+  ],
+  action: function (params, queryParams) {
+    this.render('publicLayoutDefault', { page: 'authPagesProfile', link: 'profile' });
+  }
+})

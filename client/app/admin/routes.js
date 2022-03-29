@@ -7,7 +7,7 @@ const routesAdmin = FlowRouter.group({
     Meteor.defer(function () {
       //$('body').css({"background-color":"#8D8DAA"});
     });      
-  }], //[MustSignIn, IsAdmin] auth kısmı tamamlandıktan sonra aktif edilecek.
+  }, MustSignIn, IsAdmin]
 });
 
 routesAdmin.route('/dashboard', {
