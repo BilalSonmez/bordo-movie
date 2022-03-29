@@ -49,7 +49,7 @@
           "Batman", 
           "Joker"
       ],
-      "createdAt" : ISODate("2022-03-29T11:07:03.976Z"),
+      "createdAt" : "2022-03-29T11:07:03.976Z",
       "lastEditUserId" : "4WPf8Ero74q5cgYr7",
       "createdUserId" : "4WPf8Ero74q5cgYr7"
   },
@@ -100,7 +100,7 @@
           "Fantastic", 
           "LOTR"
       ],
-      "createdAt" : ISODate("2022-03-29T11:41:21.616Z"),
+      "createdAt" : "2022-03-29T11:41:21.616Z",
       "lastEditUserId" : "4WPf8Ero74q5cgYr7",
       "createdUserId" : "4WPf8Ero74q5cgYr7"
   },
@@ -176,7 +176,7 @@
           "Japan", 
           "Child Movie"
       ],
-      "createdAt" : ISODate("2022-03-29T11:44:24.699Z"),
+      "createdAt" : "2022-03-29T11:44:24.699Z",
       "lastEditUserId" : "4WPf8Ero74q5cgYr7",
       "createdUserId" : "4WPf8Ero74q5cgYr7"
   },
@@ -211,7 +211,7 @@
       "tags" : [ 
           "War History"
       ],
-      "createdAt" : ISODate("2022-03-29T11:46:56.658Z"),
+      "createdAt" : "2022-03-29T11:46:56.658Z",
       "lastEditUserId" : "4WPf8Ero74q5cgYr7",
       "createdUserId" : "4WPf8Ero74q5cgYr7"
   },
@@ -220,7 +220,7 @@
       "title" : "The Chaos Class",
       "category_id" : "NSFzeLcmGCnCaaoiQ",
       "imdb_id" : "tt0252487",
-      "description" : "<p><span style=\"color: rgb(51, 51, 51);\">Öğrencilik hayatları haylazlık ve tembellik üzerine kurulu olan bir sınıf dolusu matrak öğrencinin, Özel Çamlıca Lisesi’nde yaşadığı yer yer eğlenceli, yer yer de dokunaklı öyküleri anlatan film, Hababam Sınıfı serisinin ilk filmidir. Keskin zekaları sayesinde tüm öğretmenlerini avuçlarında oynatıp okul düzeni ve eğitim sistemini alaşağı eden bu birbirinden renkli karakterdeki öğrenciler hem okulun hem de sinemamızın en yaramaz sınıfı olma özelliğinde. Ancak bu hükümdarlık okula atanan yeni müdür muavinin gelişiyle sarsıldığında, Hababam Sınıfı daha önce hiç karşılaşmadığı türden bir disiplin anlayışına ve zekaya sahip olan Mahmut Hoca tarafından unutulmaz derslere tabi tutulur.</span></p><p><span style=\"color: rgb(51, 51, 51);\">Hababam Sınıfı serisinin ilk filmi olan bu yapıt Rıfat Ilgaz'ın ölümsüz eseri Hababam Sınıfı romanından uyarlanmıştı.</span></p>",
+      "description" : "<p><span style=\"color: rgb(51, 51, 51;\">Öğrencilik hayatları haylazlık ve tembellik üzerine kurulu olan bir sınıf dolusu matrak öğrencinin, Özel Çamlıca Lisesi’nde yaşadığı yer yer eğlenceli, yer yer de dokunaklı öyküleri anlatan film, Hababam Sınıfı serisinin ilk filmidir. Keskin zekaları sayesinde tüm öğretmenlerini avuçlarında oynatıp okul düzeni ve eğitim sistemini alaşağı eden bu birbirinden renkli karakterdeki öğrenciler hem okulun hem de sinemamızın en yaramaz sınıfı olma özelliğinde. Ancak bu hükümdarlık okula atanan yeni müdür muavinin gelişiyle sarsıldığında, Hababam Sınıfı daha önce hiç karşılaşmadığı türden bir disiplin anlayışına ve zekaya sahip olan Mahmut Hoca tarafından unutulmaz derslere tabi tutulur.</span></p><p><span style=\"color: rgb(51, 51, 51;\">Hababam Sınıfı serisinin ilk filmi olan bu yapıt Rıfat Ilgaz'ın ölümsüz eseri Hababam Sınıfı romanından uyarlanmıştı.</span></p>",
       "cover_url" : "https://imdb-api.com/posters/original/hJVa0sEayco7qaDMnkTyZnQi8yB.jpg",
       "views" : 0,
       "trailer_link" : "https://www.youtube.com/embed/3A-JM0LVYjs?controls=0",
@@ -230,7 +230,7 @@
       "tags" : [ 
           "Turkish Movie"
       ],
-      "createdAt" : ISODate("2022-03-29T11:48:13.994Z"),
+      "createdAt" : "2022-03-29T11:48:13.994Z",
       "lastEditUserId" : "4WPf8Ero74q5cgYr7",
       "createdUserId" : "4WPf8Ero74q5cgYr7"
   },
@@ -266,7 +266,7 @@
       "tags" : [ 
           "Suriya"
       ],
-      "createdAt" : ISODate("2022-03-29T11:50:48.827Z"),
+      "createdAt" : "2022-03-29T11:50:48.827Z",
       "lastEditUserId" : "4WPf8Ero74q5cgYr7",
       "createdUserId" : "4WPf8Ero74q5cgYr7"
   },
@@ -310,7 +310,7 @@
       "tags" : [ 
           "Family"
       ],
-      "createdAt" : ISODate("2022-03-29T11:51:45.728Z"),
+      "createdAt" : "2022-03-29T11:51:45.728Z",
       "lastEditUserId" : "4WPf8Ero74q5cgYr7",
       "createdUserId" : "4WPf8Ero74q5cgYr7"
   },
@@ -352,7 +352,7 @@
       "tags" : [ 
           "LOTR"
       ],
-      "createdAt" : ISODate("2022-03-29T11:52:47.348Z"),
+      "createdAt" : "2022-03-29T11:52:47.348Z",
       "lastEditUserId" : "4WPf8Ero74q5cgYr7",
       "createdUserId" : "4WPf8Ero74q5cgYr7"
   },
@@ -376,7 +376,7 @@
       "tags" : [ 
           "Dram"
       ],
-      "createdAt" : ISODate("2022-03-29T11:53:26.751Z"),
+      "createdAt" : "2022-03-29T11:53:26.751Z",
       "lastEditUserId" : "4WPf8Ero74q5cgYr7",
       "createdUserId" : "4WPf8Ero74q5cgYr7"
   },
@@ -393,7 +393,7 @@
       "tags" : [ 
           "Dram"
       ],
-      "createdAt" : ISODate("2022-03-29T11:55:59.206Z"),
+      "createdAt" : "2022-03-29T11:55:59.206Z",
       "lastEditUserId" : "4WPf8Ero74q5cgYr7",
       "createdUserId" : "4WPf8Ero74q5cgYr7"
   },
@@ -447,7 +447,7 @@
       "tags" : [ 
           "Ridley Scott"
       ],
-      "createdAt" : ISODate("2022-03-29T11:57:20.353Z"),
+      "createdAt" : "2022-03-29T11:57:20.353Z",
       "lastEditUserId" : "4WPf8Ero74q5cgYr7",
       "createdUserId" : "4WPf8Ero74q5cgYr7"
   }

@@ -27,3 +27,17 @@ FlowRouter.route('/category', {
     this.render('publicLayoutDefault', { page: 'publicPagesCategory', link: 'public.category' });
   }
 });
+
+FlowRouter.route('/category/:_id', {
+  name: 'public.category.detail',
+  action: function (params, queryParams) {
+    this.render('publicLayoutDefault', { page: 'publicPagesCategoryDetail', link: 'public.category' });
+  }
+});
+
+FlowRouter.route('/movie/:_id', {
+  name: 'public.movie',
+  action: function (params, queryParams) {
+    this.render('publicLayoutDefault', { page: 'publicPagesMovie', link: 'public.category' });
+  }
+});

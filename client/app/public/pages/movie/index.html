@@ -1,0 +1,40 @@
+<template name="publicPagesMovie">
+  {{#let _movie = (state.get 'movie')}}
+  {{>publicComponentsBreadcrumb title=_movie.title subTitle=_movie.category_id.title}}
+  <div class="container brd-movie-detail">
+    <div class="row">
+      <div class="col-md-3">
+        <img src="{{_movie.cover_url}}" alt="{{_movie.title}}" class="img-thumbnail">
+      </div>
+      <div class="col-md-9">
+        <h4>Summary</h4>
+        {{strtohtml _movie.description}}
+        <h4>Trailer</h4>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="{{_movie.trailer_link}}" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-md-12 my-3">
+        <h4>Posters</h4>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            {{#each _movie.posters}}
+            <div class="carousel-item {{#if eq @index 0}}active{{/if}}">
+              <img class="d-block w-100" src="{{this}}">
+            </div>
+            {{/each}}
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/let}}
+</template>

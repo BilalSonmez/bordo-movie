@@ -29,6 +29,7 @@ Template.publicPagesCategory.onRendered(function () {
         return;
       }
 
+      console.log(result);
       self.state.set('category', result);
     });
   });

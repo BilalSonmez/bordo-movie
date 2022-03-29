@@ -9,9 +9,18 @@ new ValidatedMethod({
     this.unblock();
     const { _id } = data;
 
-    return Movie.findOne({
+    let movie = Movie.findOne({
       _id: _id
     });
+    Movie.update({_id: _id}, {$set:{
+      views: movie.views + 1
+    }});
+    
+    const category = Category.findOne({
+      _id: movie.category_id
+    });
+    movie.category_id = category;
+    return movie;
   }
 });
 

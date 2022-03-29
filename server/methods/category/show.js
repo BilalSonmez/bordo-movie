@@ -1,16 +1,16 @@
 import SimpleSchema from 'simpl-schema';
 
 new ValidatedMethod({
-  name: 'movie.show.category',
+  name: 'category.show',
   validate: new SimpleSchema({
-    category_id: SimpleSchema.RegEx.Id,
+    _id: SimpleSchema.RegEx.Id,
   }).validator(),
   run: async function (data) {
     this.unblock();
-    const { category_id } = data;
+    const { _id } = data;
 
-    return Movie.findOne({
-      category_id: category_id
+    return Category.findOne({
+      _id: _id
     });
   }
 });

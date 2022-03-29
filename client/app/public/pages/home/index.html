@@ -32,20 +32,6 @@
           {{/each}}
         </div>
         {{>componentPagination stateOBJ = (state 'topMovie') stateSTR = 'topMovie' }}
-        <h3>Recent Movie</h3>
-        <div class="row">
-          {{#each _recentMovie.movie}}
-          <div class="col-md-4">
-            <a href="/movie/{{_id}}">
-              <img src="{{cover_url}}" alt="{{title}}" class="img-thumbnail rounded">
-              <div class="img-caption">
-                <h5>{{title}}</h5>
-              </div>
-            </a>
-          </div>
-          {{/each}}
-        </div>
-        {{>componentPagination stateOBJ = (state 'recentMovie') stateSTR = 'recentMovie' }}
       </div>
       <div class="col-md-3 brd-homepage-sidebar">
         <h4>Category</h4>
