@@ -1,0 +1,19 @@
+.movieContainer{
+  font-size: 1.5rem;
+  max-width: calc(100% - 50px) !important;
+}
+
+.carousel-inner {
+  height: 500px;
+}
+
+.carousel-item {
+    max-height: 500px;
+}
+.movieImages{
+  height: 500px;
+}
+
+#movie-editor{
+  min-height: 150px;
+}

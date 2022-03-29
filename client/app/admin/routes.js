@@ -22,3 +22,9 @@ routesAdmin.route('/category', {
     this.render('adminLayoutDefault', { page: 'adminPageCategory' });
   }
 });
+routesAdmin.route('/movie', {
+  name: 'admin.category',
+  action: function (params, queryParams) {
+    this.render('adminLayoutDefault', { page: 'adminPageMovie' });
+  }
+});
