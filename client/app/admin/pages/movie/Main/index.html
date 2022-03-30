@@ -5,7 +5,6 @@
       <div class="col-md-10 ">
         <div class="h1 text-center">Movie List</div>
         <hr />
-
         <div class="table-responsive">
           <table class="table table-striped align-middle">
             <thead>
@@ -22,7 +21,7 @@
               {{#each _movies.movie}}
               <tr>
                 <td class="fw-bold">{{index_count @index _movies.options.pagination}}</td>
-                <td class="ellipsis">{{title}}</td>
+                <td class="ellipsis"><a class="adminLink" href="/movie/{{_id}}" target="_blank">{{title}}</a></td>
                 <td>
                 {{#each _categories}}
                 {{#if eq _id ../category_id}}
@@ -30,7 +29,7 @@
                 {{/if}}
                 {{/each}}
                 </td>
-                <td><a href="https://www.imdb.com/title/{{imdb_id}}" target="_blank">{{imdb_id}}</a></td>
+                <td><a class="adminLink" href="https://www.imdb.com/title/{{imdb_id}}" target="_blank">{{imdb_id}}</a></td>
                 <td class="text-center">
                   <button class="btn btn-secondary btn-sm editbtn btnMovieEdit">
                     <i class="fa-solid fa-file-pen"></i>
