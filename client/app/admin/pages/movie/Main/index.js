@@ -1,7 +1,10 @@
-Template.adminPageCategory.onCreated(function () {
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+Template.adminPageMovie.onCreated(function () {
   this.state = new ReactiveDict(null, {
     categories: [],
+    movies: [],
   });
+
   this.pagination = new ReactiveDict(null, {
     currentPage: 1,
     pageItems: 10,
@@ -17,10 +20,21 @@ Template.adminPageCategory.onCreated(function () {
   this.filtering = new ReactiveDict(null, {});
 });
 
-Template.adminPageCategory.onRendered(function () {
+Template.adminPageMovie.onRendered(function () {
   const self = this;
+
   this.autorun(function () {
-    AppUtil.refreshTokens.get("category");
+    Meteor.call("category.list", {}, function (error, result) {
+      if (error) {
+        ErrorHandler.show(error.message);
+        return;
+      }
+      self.state.set("categories", result.category);
+    });
+  });
+  this.autorun(function () {
+    AppUtil.refreshTokens.get("movie");
+    
     const listOptions = {
       options: {
         pagination: {
@@ -34,33 +48,34 @@ Template.adminPageCategory.onRendered(function () {
         }
       }
     };
-    Meteor.call("category.list", listOptions, function (error, result) {
+    Meteor.call("movie.list", listOptions, function (error, result) {
       if (error) {
         ErrorHandler.show(error.message);
         return;
       }
-      console.log(result);
+      self.state.set("movies", result);
       self.pagination.set("totalCount",result.options.pagination.totalCount);
       const pages=Math.ceil(result.options.pagination.totalCount/result.options.pagination.pageItems)
       self.pagination.set("totalPages",pages);
-      self.state.set("categories", result);
+      console.log(self.pagination.keys);
     });
   });
 });
 
-Template.adminPageCategory.events({
-  "click .categortEdit": function () {
-    Session.set("editData", this);
-    console.log(Session.get("editData"));
-    AppUtil.refreshTokens.set("category", Random.id());
+Template.adminPageMovie.events({
+  'click .btnMovieAdd': function (event,template) {
+    FlowRouter.go("admin.movie.add",{});
   },
-  "click .categortDelete": function (event, template) {
+  'click .btnMovieEdit': function (event,template) {
+    FlowRouter.go("admin.movie.edit", {_id: this._id});
+  },
+  'click .btnMovieDelete': function (event,template) {
     event.preventDefault();
-    const category = this;
+    const movie = this;
     Meteor.call(
-      "category.delete",
+      "movie.delete",
       {
-        _id: category._id,
+        _id: movie._id,
       },
       function (error, result) {
         LoadingLine.hide();
@@ -68,13 +83,8 @@ Template.adminPageCategory.events({
           ErrorHandler.show(error.message);
           return;
         }
-        AppUtil.refreshTokens.set("category", Random.id());
+        AppUtil.refreshTokens.set("movie", Random.id());
       }
     );
-  },
-});
-
-Template.adminPageCategory.onDestroyed(function () {
-  Session.set("editData", undefined);
-  console.log(Session.get("editData"));
+  }
 });

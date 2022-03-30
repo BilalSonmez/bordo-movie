@@ -1,0 +1,55 @@
+<template name="adminPageMovie">
+  {{#let _categories=(state.get 'categories') _movies=(state.get 'movies')}}
+  <div class="container ms-4 mt-4 movieContainer">
+    <div class="d-flex flex-row row row-cols-1 row-cols-sm-1 row-cols-md-2">
+      <div class="col-md-10 ">
+        <div class="h1 text-center">Movie List</div>
+        <hr />
+
+        <div class="table-responsive">
+          <table class="table table-striped align-middle">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 10%">Index</th>
+                <th scope="col" style="width: 35%">Title</th>
+                <th scope="col" style="width: 20%">Category</th>
+                <th scope="col" style="width: 15%">Imdb Id</th>
+                <th class="text-center" scope="col" style="width: 10%">Edit</th>
+                <th class="text-center" scope="col" style="width: 10%">Remove</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each _movies.movie}}
+              <tr>
+                <td class="fw-bold">{{index_count @index _movies.options.pagination}}</td>
+                <td class="ellipsis">{{title}}</td>
+                <td>
+                {{#each _categories}}
+                {{#if eq _id ../category_id}}
+                {{title}}
+                {{/if}}
+                {{/each}}
+                </td>
+                <td><a href="https://www.imdb.com/title/{{imdb_id}}" target="_blank">{{imdb_id}}</a></td>
+                <td class="text-center">
+                  <button class="btn btn-secondary btn-sm editbtn btnMovieEdit">
+                    <i class="fa-solid fa-file-pen"></i>
+                  </button>
+                </td>
+                <td class="text-center">
+                  <button class="btn btn-danger btn-sm deletebtn btnMovieDelete"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-2 text-center pt-5">
+        <button class="btn btn-success btn-lg btnMovieAdd">Movie Add</button>
+      </div>
+    </div>
+  </div>
+  {{> componentAdminPagination paginationState=pagination}}
+  {{/let}}
+</template>

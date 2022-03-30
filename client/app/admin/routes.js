@@ -22,9 +22,24 @@ routesAdmin.route('/category', {
     this.render('adminLayoutDefault', { page: 'adminPageCategory' });
   }
 });
+
 routesAdmin.route('/movie', {
-  name: 'admin.category',
+  name: 'admin.movie',
   action: function (params, queryParams) {
     this.render('adminLayoutDefault', { page: 'adminPageMovie' });
+  }
+});
+
+routesAdmin.route('/movie/add', {
+  name: 'admin.movie.add',
+  action: function (params, queryParams) {
+    this.render('adminLayoutDefault', { page: 'adminPageMovieAdd' });
+  }
+});
+
+routesAdmin.route('/movie/edit/:_id', {
+  name: 'admin.movie.edit',
+  action: function (params, queryParams) {
+    this.render('adminLayoutDefault', { page: 'adminPageMovieEdit' });
   }
 });

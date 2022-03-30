@@ -1,7 +1,7 @@
 import Quill from "quill";
 import Tagify from "@yaireo/tagify";
 
-Template.adminPageMovie.onCreated(function () {
+Template.adminPageMovieAdd.onCreated(function () {
   this.state = new ReactiveDict(null, {
     categories: [],
     movie: [],
@@ -9,7 +9,7 @@ Template.adminPageMovie.onCreated(function () {
   });
 });
 
-Template.adminPageMovie.onRendered(function () {
+Template.adminPageMovieAdd.onRendered(function () {
   const self = this;
 
   // Tagify hazır çalışır durumda. veri işlenmesi gerekiyor.
@@ -32,7 +32,7 @@ Template.adminPageMovie.onRendered(function () {
   });
 });
 
-Template.adminPageMovie.events({
+Template.adminPageMovieAdd.events({
   "submit form#brdMovieDataCreateForm": function (event, template) {
     event.preventDefault();
     const imdbId = event.target.movieInputId.value;
