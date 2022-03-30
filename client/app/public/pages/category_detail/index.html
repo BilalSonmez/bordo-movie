@@ -3,8 +3,8 @@
   {{>publicComponentsBreadcrumb title=_category.title subTitle="Category"}}
   <div class="container brd-homepage">
     <div class="row">
-      <div class="col-md-12" style="margin-bottom: 5rem;">
-        {{strtohtml _category.description}}
+      <div class="col-md-12" id="movie-detail-content" style="margin-bottom: 5rem;">
+        {{strtohtml _category.description 'movie-detail-content'}}
       </div>
       <div class="col-md-12 brd-homepage-main">
         <div class="row">
