@@ -20,8 +20,7 @@ Template.adminPageMovieEdit.onRendered(function () {
   tagify = new Tagify(inputElm);
   
   this.autorun(function () {
-    AppUtil.refreshTokens.get("movieEdit");
-    Meteor.call("movie.show", {_id: _id}, function (error, result) {
+    Meteor.call("movie.show.admin", {_id: _id}, function (error, result) {
       if (error) {
         ErrorHandler.show(error.message);
         return;
@@ -85,7 +84,6 @@ Template.adminPageMovieEdit.events({
         return;
       }
       SuccessMessage.show("Film başarıyla gücellendi.");
-      AppUtil.refreshTokens.set("movieEdit", Random.id());
       FlowRouter.go("admin.movie", {});
     });
   },
