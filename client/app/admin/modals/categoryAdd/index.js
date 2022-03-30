@@ -8,9 +8,9 @@ Template.adminModalCategoryCreate.onRendered(function () {
   });
   const modalElement = document.getElementById("brdadminModalCategoryCreate");
   this.modal = new bootstrap.Modal(modalElement);
-
   modalElement.addEventListener("hidden.bs.modal", function (event) {
     self.$("#brdCategoryCreateForm").trigger("reset");
+    self.quill.root.innerHTML ="";
   });
 });
 
