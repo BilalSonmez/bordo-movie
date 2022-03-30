@@ -2,7 +2,7 @@ import SimpleSchema from 'simpl-schema';
 
 new ValidatedMethod({
   name: 'category.delete',
-  //admin kontrolü
+  mixins: [isAdmin],
   validate: new SimpleSchema({
     _id: SimpleSchema.RegEx.Id
   }).validator(),
