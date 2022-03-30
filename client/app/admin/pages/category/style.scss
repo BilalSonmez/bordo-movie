@@ -1,0 +1,10 @@
+.categoryContainer{
+  font-size: 1.5rem;
+  max-width: calc(100% - 50px) !important;
+}
+.ellipsis {
+  max-width: 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
