@@ -8,7 +8,9 @@
       </div>
       <div class="col-md-9">
         <h4>Summary</h4>
-        {{strtohtml _movie.description}}
+        <div id="movie-detail-content">
+          {{strtohtml _movie.description "movie-detail-content"}}
+        </div>
         <h4>Trailer</h4>
         <div class="embed-responsive embed-responsive-16by9">
           <iframe class="embed-responsive-item" src="{{_movie.trailer_link}}" allowfullscreen></iframe>
