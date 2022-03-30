@@ -1,6 +1,17 @@
-.navbar {
+.adminNavbar {
   position: fixed !important;
   left: 0;
   top: 0;
   width: 100%;
+  z-index: 9999;
+}
+.adminNavbar {
+  .btn{
+    background-color: #fff !important;
+    color:#600100;
+  }
+  .btn:hover{
+  color: #fff !important;
+  background-color: #600100 !important;
+  }
 }
