@@ -1,7 +1,27 @@
-// Credit: Nicolas Gallagher and SUIT CSS.
+@import "../../../../style.scss";
 
 .brd-movie-detail h4 {
   margin-top: 1.5rem;
+}
+.comment-area {
+  label {
+    margin-top: 1rem;
+  }
+
+  .brd-btn {
+    margin-top: 1rem;
+    padding: 1.25rem 0;
+    width: 100%;
+    background-color: white;
+    color: $base-color;
+  }
+  .brd-btn:hover {
+    background-color: $dark-base-color;
+    color: white;
+  }
+  .card {
+    margin-top: 1rem;
+  }
 }
 .embed-responsive {
   position: relative;

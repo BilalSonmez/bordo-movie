@@ -16,10 +16,18 @@ routesAdmin.route('/dashboard', {
     this.render('adminLayoutDefault', { page: 'adminPageDashboard' });
   }
 });
+
 routesAdmin.route('/category', {
   name: 'admin.category',
   action: function (params, queryParams) {
     this.render('adminLayoutDefault', { page: 'adminPageCategory' });
+  }
+});
+
+routesAdmin.route('/comments', {
+  name: 'admin.comments',
+  action: function (params, queryParams) {
+    this.render('adminLayoutDefault', { page: 'adminPageComments' });
   }
 });
 
