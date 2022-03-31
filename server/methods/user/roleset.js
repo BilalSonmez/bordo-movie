@@ -1,7 +1,7 @@
 import SimpleSchema from 'simpl-schema';
 
 new ValidatedMethod({
-  name: 'movie.delete',
+  name: 'role.set',
   mixins: [isAdmin],
   validate: new SimpleSchema({
     _id: SimpleSchema.RegEx.Id
@@ -9,6 +9,7 @@ new ValidatedMethod({
   run: async function (data) {
     this.unblock();
     const { _id } = data;
-    Movie.remove({ _id: _id });
+    Roles.addUsersToRoles(_id, 'roles.admin', null);
+    return Meteor.users.update({_id: _id}, {$set: {"profile.isAdmin": true}});
   }
 });

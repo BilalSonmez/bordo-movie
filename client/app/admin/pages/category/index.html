@@ -21,7 +21,9 @@
               {{#each _categories.category}}
               <tr>
                 <td class="fw-bold">{{index_count @index _categories.options.pagination}}</td>
-                <td>{{title}}</td>
+                
+                <td><a class="adminLink" href="/category/{{_id}}" target="_blank">{{title}}</a></td>
+                
                 <td class="ellipsis">{{clearHTML description}}</td>
                 <td class="text-center" style="width: 10%">
                   <button class="btn btn-secondary btn-sm editbtn categortEdit" data-bs-toggle="modal" data-bs-target="#brdadminModalCategoryEdit">

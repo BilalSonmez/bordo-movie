@@ -2,7 +2,7 @@ import SimpleSchema from 'simpl-schema';
 
 new ValidatedMethod({
   name: 'movie.create',
-  //mixin admin kontrolü eklenecek.
+  mixins: [isAdmin],
   validate: new SimpleSchema({
     movie: MovieSchema
   }).validator(),
