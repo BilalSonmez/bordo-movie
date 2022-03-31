@@ -1,13 +1,13 @@
 <template name="publicPagesMovie">
-  {{#let _movie = (state.get 'movie')}}
+  {{#let _movie = (state.get 'movie') _comments = (state.get 'comments')}}
   {{>publicComponentsBreadcrumb title=_movie.title subTitle=_movie.category_id.title}}
   <div class="container brd-movie-detail">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <img src="{{_movie.cover_url}}" alt="{{_movie.title}}" class="img-thumbnail">
       </div>
-      <div class="col-md-9">
-        <h4>Summary</h4>
+      <div class="col-md-8">
+        <h4 class="sticky-top">Summary</h4>
         <div id="movie-detail-content">
           {{strtohtml _movie.description "movie-detail-content"}}
         </div>
@@ -34,6 +34,40 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
+        </div>
+      </div>
+      <div class="col-md-12 my-3 comment-area">
+        <h4>Comment</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <form class="row" id="commentForm">
+                  <div class="col-md-12">
+                    <label for="commentMessage">Message</label>
+                    <textarea name="commentMessage" id="commentMessage" cols="30" rows="5" maxlength="200" class="form-control" required></textarea>
+                  </div>
+                  <div class="col-md-12">
+                    <button class="btn brd-btn" id="commentSend">Send</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 commentList">
+            {{#each _comments.comments }}
+            <div class="card">
+              <div class="card-header">{{_user_id.profile.name}} {{_user_id.profile.lastName}}</div>
+              <div class="card-body">
+                <p>{{comment}}</p>
+              </div>
+              <div class="card-footer">
+                {{timeConventer createdAt}}
+              </div>
+            </div>
+            {{/each}}
+            {{>componentPagination stateOBJ = (state 'comments') stateSTR = 'comments'}}
+          </div>
         </div>
       </div>
     </div>

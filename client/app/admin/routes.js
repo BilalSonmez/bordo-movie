@@ -16,6 +16,7 @@ routesAdmin.route('/dashboard', {
     this.render('adminLayoutDefault', { page: 'adminPageDashboard' });
   }
 });
+
 routesAdmin.route('/category', {
   name: 'admin.category',
   action: function (params, queryParams) {
@@ -28,6 +29,14 @@ routesAdmin.route('/user', {
     this.render('adminLayoutDefault', { page: 'adminPageUser' });
   }
 });
+
+routesAdmin.route('/comments', {
+  name: 'admin.comments',
+  action: function (params, queryParams) {
+    this.render('adminLayoutDefault', { page: 'adminPageComments' });
+  }
+});
+
 routesAdmin.route('/movie', {
   name: 'admin.movie',
   action: function (params, queryParams) {
