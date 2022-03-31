@@ -35,6 +35,13 @@ FlowRouter.route('/category/:_id', {
   }
 });
 
+FlowRouter.route('/tags/:_tag', {
+  name: 'public.tags',
+  action: function (params, queryParams) {
+    this.render('publicLayoutDefault', { page: 'publicPagesTag', link: 'public.category' });
+  }
+});
+
 FlowRouter.route('/movie/:_id', {
   name: 'public.movie',
   action: function (params, queryParams) {

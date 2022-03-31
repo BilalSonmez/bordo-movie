@@ -1,0 +1,22 @@
+<template name="publicComponentsMovieList">
+  {{#let _movies=(state.get 'movies')}}
+  <div class="movie-component">
+    {{#if title}}
+    <h3>{{title}}</h3>
+    {{/if}}
+    <div class="row">
+      {{#each _movies }}
+      <div class="col-md-{{../displayCol}}">
+        <a href="/movie/{{_id}}">
+          <img src="{{cover_url}}" alt="{{title}}" class="img-thumbnail rounded">
+          <div class="img-caption">
+            <h5>{{title}}</h5>
+          </div>
+        </a>
+      </div>
+      {{/each}}
+    </div>
+    {{>componentPagination2 paginationState=pagination}}
+  </div>
+  {{/let}}
+</template>

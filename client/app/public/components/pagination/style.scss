@@ -1,0 +1,19 @@
+@import '../../../../style.scss';
+
+.pagination .page-item .page-link {
+  color: black;
+}
+.pagination .page-item.active {
+  background-color: $base-color;
+  .page-link {
+    background-color: $base-color;
+    color: white;
+  }
+}
+.pagination .page-item:hover {
+  background-color: $base-color;
+  .page-link {
+    background-color: $base-color;
+    color: white;
+  }
+}
