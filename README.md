@@ -30,9 +30,10 @@ Sunucuyu çalıştırın (3000 Port)
 ```
 
   
-## Yazarlar ve Teşekkür
+## Yazarlar ve Teşekkürler
 
 - [@Bilal Sönmez](https://www.github.com/BilalSonmez)
 - [@Nuh Yılmaz Şentürk](https://www.github.com/NuhYlmz)
+- [@Recep](https://github.com/Sergeant61)
 
   
