@@ -3,10 +3,6 @@
 IMDB API'sini kullanarak responsive yapıda bir çalışma gerçekleştirdik.
 
 
-## Demo
-
-
-  [Bordo Movie](https://bordo-movie.herokuapp.com/)
 ## Bilgisayarınızda Çalıştırın
 
 Projeyi klonlayın
