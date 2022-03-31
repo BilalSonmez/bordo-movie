@@ -2,6 +2,7 @@ import SimpleSchema from 'simpl-schema';
 
 new ValidatedMethod({
   name: 'movie.show.admin',
+  mixins: [isAdmin],
   validate: new SimpleSchema({
     _id: SimpleSchema.RegEx.Id,
   }).validator(),

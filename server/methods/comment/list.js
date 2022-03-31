@@ -2,6 +2,7 @@ import SimpleSchema from 'simpl-schema';
 
 new ValidatedMethod({
   name: 'comment.list',
+  mixins: [isAdmin],
   validate: new SimpleSchema({
     options: { type: QueryOptionsSchema, optional: true }
   }).validator(),

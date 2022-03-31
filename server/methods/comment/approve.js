@@ -2,7 +2,7 @@ import SimpleSchema from 'simpl-schema';
 
 new ValidatedMethod({
   name: 'comment.approve',
-  //mixin admin kontrolü eklenecek.
+  mixins: [isAdmin],
   validate: new SimpleSchema({
     _id: SimpleSchema.RegEx.Id,
     approve: Boolean

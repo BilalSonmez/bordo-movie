@@ -3,11 +3,7 @@ import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 const routesAuth = FlowRouter.group({
   prefix: '/auth',
   name: 'auth',
-  triggersEnter:[function () {
-    Meteor.defer(function () {
-      //$('body').css({"background-color":"#8D8DAA"});
-    });      
-  }, MustSignOut],
+  triggersEnter:[MustSignOut],
 });
 
 routesAuth.route('/signin', {
@@ -24,13 +20,9 @@ routesAuth.route('/signup', {
   }
 });
 
-//Profile Sayfası Ayrı Olucak
-
 FlowRouter.route('/profile', {
   name: 'profile.main',
-  triggersEnter: [
-    MustSignIn
-  ],
+  triggersEnter:[MustSignIn],
   action: function (params, queryParams) {
     this.render('publicLayoutDefault', { page: 'authPagesProfile', link: 'profile' });
   }

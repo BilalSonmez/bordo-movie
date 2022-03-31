@@ -102,8 +102,4 @@ Template.adminPageUser.events({
       }
     );
   },
-  // "click .btnUserEdit": function () {
-  //   Session.set("editUser", this);
-  //   AppUtil.refreshTokens.set("user", Random.id());
-  // },
 });

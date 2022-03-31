@@ -8,7 +8,8 @@ Template.publicPagesHome.onCreated(function(){
     recentMovie: {
       movie: [],
       options: fetchOptionSetup(10)
-    }
+    },
+    tags: []
   });
 });
 
@@ -76,6 +77,23 @@ Template.publicPagesHome.onRendered(function () {
         return
       }
       self.state.set('category', result.category);
+    });
+  });
+
+
+  this.autorun(function() {
+    const tags_data = self.state.get('tags');
+
+    Meteor.call('tags.list', {}, function (error, result) {
+      LoadingLine.hide()
+  
+      if (error) {
+        ErrorHandler.show(error)
+        return;
+      }
+      self.state.set('tags', result);
+      console.log(result);
+      AppUtil.refreshTokens.set('tags', Random.id());
     });
   });
 });

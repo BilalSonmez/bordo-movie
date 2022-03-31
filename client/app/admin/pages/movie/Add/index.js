@@ -12,10 +12,8 @@ Template.adminPageMovieAdd.onCreated(function () {
 Template.adminPageMovieAdd.onRendered(function () {
   const self = this;
 
-  // Tagify hazır çalışır durumda. veri işlenmesi gerekiyor.
-    var inputElm = document.querySelector("#inputTags"),
-    tagify = new Tagify(inputElm);
-    //tagify.addTags(["banana", "orange", "apple"]);
+  var inputElm = document.querySelector("#inputTags");
+  tagify = new Tagify(inputElm);
 
   self.quill = new Quill("#movie-editor", {
     theme: "snow",
@@ -40,10 +38,13 @@ Template.adminPageMovieAdd.events({
       ErrorHandler.show("Lütfen imdb idsini giriniz.");
       return;
     }
-    var requestOptions = {
+
+    // TODO:
+    const requestOptions = {
       method: "GET",
       redirect: "follow",
     };
+    
     fetch("https://imdb-api.com/en/API/Posters/k_3axgnwfu/" + String(imdbId), requestOptions)
       .then((response) => response.text())
       .then((result) => template.state.set("movie", JSON.parse(result)))
@@ -72,11 +73,11 @@ Template.adminPageMovieAdd.events({
       posters.push(posterdata[index].link);
     }
     const rawTags = JSON.parse(event.target.inputTags.value);
-    let tags =[];
+    let tags = [];
     rawTags.forEach(element => {
       tags.push(element.value);
     });
-   
+
     const obj = {
       movie: {
         title: title,
@@ -104,7 +105,7 @@ Template.adminPageMovieAdd.events({
       template.state.set("posters", {});
       AppUtil.refreshTokens.set("movie", Random.id());
       event.target.reset();
-      template.quill.root.innerHTML="";
+      template.quill.root.innerHTML = "";
     });
   },
 });

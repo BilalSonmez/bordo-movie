@@ -1,6 +1,6 @@
 <template name="publicPagesHome">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  {{#let _topMovie = (state.get 'topMovie') _recentMovie = (state.get 'recentMovie')}}
+  {{#let _topMovie = (state.get 'topMovie') _recentMovie = (state.get 'recentMovie') _tags = (state.get 'tags')}}
   <div class="container brd-homepage">
     <h3>Top Recent</h3>
     <div class="row">
@@ -44,11 +44,9 @@
         {{/let}}
         <h4>Tags</h4>
         <div class="sidebar-list">
-          <a href="#" class="sidebar-list-item">Action</a>
-          <a href="#" class="sidebar-list-item">Adventure</a>
-          <a href="#" class="sidebar-list-item">Comedy</a>
-          <a href="#" class="sidebar-list-item">Drama</a>
-          <a href="#" class="sidebar-list-item">Romance</a>
+          {{#each _tags}}
+          <a href="/tags/{{this}}" class="sidebar-list-item">{{this}}</a>
+          {{/each}}
         </div>
       </div>
     </div>

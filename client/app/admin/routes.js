@@ -3,11 +3,7 @@ import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 const routesAdmin = FlowRouter.group({
   prefix: '/admin',
   name: 'admin',
-  triggersEnter:[function () {
-    Meteor.defer(function () {
-      //$('body').css({"background-color":"#8D8DAA"});
-    });      
-  }, MustSignIn, IsAdmin]
+  triggersEnter:[MustSignIn, IsAdmin]
 });
 
 routesAdmin.route('/dashboard', {
