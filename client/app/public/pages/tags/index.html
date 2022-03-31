@@ -1,0 +1,18 @@
+<template name="publicPagesTag">
+  {{#let _tag = (state.get 'tag')}}
+  {{>publicComponentsBreadcrumb title=_tag subTitle="Tags" }}
+  <div class="container brd-homepage">
+    <div class="row">
+      <div class="col-md-12 brd-homepage-main">
+        {{>publicComponentsMovieList
+          tag = _tag
+          displayCol = "4"
+          pageItem = 9
+          sortArea = "views"
+          sortType = "desc"
+        }}
+      </div>
+    </div>
+  </div>
+  {{/let}}
+</template>

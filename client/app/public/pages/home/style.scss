@@ -1,25 +1,5 @@
 @import '../../../../style.scss';
 
-
-.brd-homepage-main {
-  a {
-    text-decoration: none;
-    .img-caption {
-      color: black;
-    }
-  }
-  a:hover{
-    .img-caption {
-      color: $base-color;
-    }
-  }
-  .img-caption {
-    margin: 0.5rem 2rem;
-    color: #fff;
-    text-align: center;
-  }
-}
-
 .brd-top-slider {
   margin: 2rem 0;
   img {

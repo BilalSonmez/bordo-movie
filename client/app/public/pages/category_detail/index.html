@@ -1,5 +1,5 @@
 <template name="publicPagesCategoryDetail">
-  {{#let _movies = (state.get 'movies') _category = (state.get 'category') }}
+  {{#let _category = (state.get 'category') _id = (state.get 'category_id')}}
   {{>publicComponentsBreadcrumb title=_category.title subTitle="Category"}}
   <div class="container brd-homepage">
     <div class="row">
@@ -7,19 +7,13 @@
         {{strtohtml _category.description 'movie-detail-content'}}
       </div>
       <div class="col-md-12 brd-homepage-main">
-        <div class="row">
-          {{#each _movies.movie}}
-          <div class="col-md-3">
-            <a href="/movie/{{_id}}">
-              <img src="{{cover_url}}" alt="{{title}}" class="img-thumbnail rounded">
-              <div class="img-caption">
-                <h5>{{title}}</h5>
-              </div>
-            </a>
-          </div>
-          {{/each}}
-        </div>
-        {{>componentPagination stateOBJ = (state 'movies') stateSTR = 'movies' }}
+        {{>publicComponentsMovieList
+          categoryID = _id
+          displayCol = "4"
+          pageItem = 9
+          sortArea = "views"
+          sortType = "desc"
+        }}
       </div>
     </div>
   </div>
