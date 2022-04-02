@@ -1,20 +1,22 @@
 <template name="publicPagesCategory">
   {{>publicComponentsBreadcrumb title="Category" subTitle=null}}
+
   {{#let _category = (state.get 'category') }}
-  <div class="container">
-    <div class="row brd-category-grid">
-      {{#each _category.category }}
-      <div class="col-md-3">
-        <a href="/category/{{_id}}">
-          <img src="{{image_url}}" alt="{{title}}" class="img-thumbnail rounded">
-          <div class="img-caption">
-            <h5 style="color: black;">{{title}}</h5>
+    <div class="container">
+      <div class="row brd-category-grid">
+        {{#each _category.category }}
+          <div class="col-md-3">
+            <a href="/category/{{_id}}">
+              <img src="{{image_url}}" alt="{{title}}" class="img-thumbnail rounded">
+              <div class="img-caption">
+                <h5 style="color: black;">{{title}}</h5>
+              </div>
+            </a>
           </div>
-        </a>
+        {{/each}}
       </div>
-      {{/each}}
+      
+      {{>componentPagination stateOBJ = (state 'category') stateSTR = 'category'}}
     </div>
-    {{>componentPagination stateOBJ = (state 'category') stateSTR = 'category'}}
-  </div>
   {{/let}}
 </template>

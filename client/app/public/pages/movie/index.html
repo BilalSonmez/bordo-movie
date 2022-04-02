@@ -1,76 +1,76 @@
 <template name="publicPagesMovie">
   {{#let _movie = (state.get 'movie') _comments = (state.get 'comments')}}
-  {{>publicComponentsBreadcrumb title=_movie.title subTitle=_movie.category_id.title}}
-  <div class="container brd-movie-detail">
-    <div class="row">
-      <div class="col-md-4">
-        <img src="{{_movie.cover_url}}" alt="{{_movie.title}}" class="img-thumbnail">
-      </div>
-      <div class="col-md-8">
-        <h4 class="sticky-top">Summary</h4>
-        <div id="movie-detail-content">
-          {{strtohtml _movie.description "movie-detail-content"}}
+    {{>publicComponentsBreadcrumb title=_movie.title subTitle=_movie.category_id.title}}
+    <div class="container brd-movie-detail">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{{_movie.cover_url}}" alt="{{_movie.title}}" class="img-thumbnail">
         </div>
-        <h4>Trailer</h4>
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="{{_movie.trailer_link}}" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="col-md-12 my-3">
-        <h4>Posters</h4>
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            {{#each _movie.posters}}
-            <div class="carousel-item {{#if eq @index 0}}active{{/if}}">
-              <img class="d-block w-100" src="{{this}}">
-            </div>
-            {{/each}}
+        <div class="col-md-8">
+          <h4 class="sticky-top">Summary</h4>
+          <div id="movie-detail-content">
+            {{{_movie.description}}}
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-      <div class="col-md-12 my-3 comment-area">
-        <h4>Comment</h4>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-body">
-                <form class="row" id="commentForm">
-                  <div class="col-md-12">
-                    <label for="commentMessage">Message</label>
-                    <textarea name="commentMessage" id="commentMessage" cols="30" rows="5" maxlength="200" class="form-control" required></textarea>
-                  </div>
-                  <div class="col-md-12">
-                    <button class="btn brd-btn" id="commentSend">Send</button>
-                  </div>
-                </form>
-              </div>
-            </div>
+          <h4>Trailer</h4>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="{{_movie.trailer_link}}" allowfullscreen></iframe>
           </div>
-          <div class="col-md-6 commentList">
-            {{#each _comments.comments }}
-            <div class="card">
-              <div class="card-header">{{_user_id.profile.name}} {{_user_id.profile.lastName}}</div>
-              <div class="card-body">
-                <p>{{comment}}</p>
-              </div>
-              <div class="card-footer">
-                {{timeConventer createdAt}}
+        </div>
+        <div class="col-md-12 my-3">
+          <h4>Posters</h4>
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              {{#each _movie.posters}}
+                <div class="carousel-item {{#if eq @index 0}}active{{/if}}">
+                  <img class="d-block w-100" src="{{this}}">
+                </div>
+              {{/each}}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-12 my-3 comment-area">
+          <h4>Comment</h4>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <form class="row" id="commentForm">
+                    <div class="col-md-12">
+                      <label for="commentMessage">Message</label>
+                      <textarea name="commentMessage" id="commentMessage" cols="30" rows="5" maxlength="200" class="form-control" required></textarea>
+                    </div>
+                    <div class="col-md-12">
+                      <button class="btn brd-btn" id="commentSend">Send</button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
-            {{/each}}
-            {{>componentPagination stateOBJ = (state 'comments') stateSTR = 'comments'}}
+            <div class="col-md-6 commentList">
+              {{#each _comments.comments }}
+                <div class="card">
+                  <div class="card-header">{{_user_id.profile.name}} {{_user_id.profile.lastName}}</div>
+                  <div class="card-body">
+                    <p>{{comment}}</p>
+                  </div>
+                  <div class="card-footer">
+                    {{timeConventer createdAt}}
+                  </div>
+                </div>
+              {{/each}}
+              {{>componentPagination stateOBJ = (state 'comments') stateSTR = 'comments'}}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   {{/let}}
 </template>

@@ -11,7 +11,7 @@ new ValidatedMethod({
     const { _id } = data;
 
     Roles.removeUsersFromRoles(_id, 'roles.admin', null);
-    return Meteor.users.update({_id: _id}, {$set: {"profile.isAdmin": false}});
+    return Meteor.users.update({ _id: _id }, { $set: { "profile.isAdmin": false } });
 
   }
 });

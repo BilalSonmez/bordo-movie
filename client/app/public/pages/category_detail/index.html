@@ -1,21 +1,25 @@
 <template name="publicPagesCategoryDetail">
-  {{#let _category = (state.get 'category') _id = (state.get 'category_id')}}
-  {{>publicComponentsBreadcrumb title=_category.title subTitle="Category"}}
-  <div class="container brd-homepage">
-    <div class="row">
-      <div class="col-md-12" id="movie-detail-content" style="margin-bottom: 5rem;">
-        {{strtohtml _category.description 'movie-detail-content'}}
-      </div>
-      <div class="col-md-12 brd-homepage-main">
-        {{>publicComponentsMovieList
-          categoryID = _id
-          displayCol = "4"
-          pageItem = 9
-          sortArea = "views"
-          sortType = "desc"
-        }}
+  {{#let _category = (state.get 'category')}}
+
+    {{>publicComponentsBreadcrumb title=_category.title subTitle="Category"}}
+
+    <div class="container brd-homepage">
+      <div class="row">
+        <div class="col-md-12" id="movie-detail-content" style="margin-bottom: 5rem;">
+          {{{_category.description}}}
+        </div>
+        <div class="col-md-12 brd-homepage-main">
+          {{#with _category}}
+            {{>publicComponentsMovieList
+            categoryID = _id
+            displayCol = "4"
+            pageItem = 9
+            sortArea = "views"
+            sortType = "desc"}}
+          {{/with}}
+        </div>
       </div>
     </div>
-  </div>
+
   {{/let}}
 </template>

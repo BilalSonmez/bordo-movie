@@ -8,7 +8,7 @@ new ValidatedMethod({
   }).validator(),
   run: function(data){
     this.unblock();
-    const { movie } = data
+    const { movie } = data;
 
     const id = Movie.insert(movie);
     return Movie.findOne({ _id: id});

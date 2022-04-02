@@ -8,9 +8,10 @@ new ValidatedMethod({
   }).validator(),
   run: function (data) {
     this.unblock();
-    const { options, movie_id} = data;
+    const { options, movie_id } = data;
 
-    const comments = Fetch(Comments, {_movie_id: movie_id, approve: true}, options, 'comments');
+    const comments = Fetch(Comments, { _movie_id: movie_id, approve: true }, options, 'comments');
+
     comments.comments = comments.comments.map(_comment => {
       _comment._user_id = Meteor.users.findOne({
         _id: _comment._user_id
@@ -18,6 +19,7 @@ new ValidatedMethod({
 
       return _comment;
     });
+
     return comments;
   }
 });

@@ -11,6 +11,7 @@ new ValidatedMethod({
     const { options } = data;
 
     const comments = Fetch(Comments, {}, options, 'comments');
+
     comments.comments = comments.comments.map(_comment => {
       _comment._user_id = Meteor.users.findOne({
         _id: _comment._user_id
@@ -22,6 +23,7 @@ new ValidatedMethod({
 
       return _comment;
     });
+    
     return comments;
   }
 });
