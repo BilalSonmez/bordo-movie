@@ -9,16 +9,18 @@ new ValidatedMethod({
   run: function (data) {
     this.unblock();
     const { options } = data;
-    let usersData = Fetch(Meteor.users, {}, options, 'user');
-    let userPermissions=[];
-    usersData.user.forEach(element => {
+    const result = Fetch(Meteor.users, {}, options, 'user');
+    const userPermissions = [];
+
+    result.user.forEach(element => { // TODO:
       userPermissions.push({
-        id:element._id,
+        id: element._id,
         isAdmin: Roles.userIsInRole(element._id, 'roles.admin', null),
       });
     });
-    usersData.userPermissions=userPermissions;
-    return usersData;
+
+    result.userPermissions = userPermissions;
+    return result;
 
   }
 });

@@ -10,6 +10,7 @@ new ValidatedMethod({
     this.unblock();
     const { comment } = data;
     comment.approve = false;
+    
     const id = Comments.insert(comment);
     return Comments.findOne({ _id: id});
   }

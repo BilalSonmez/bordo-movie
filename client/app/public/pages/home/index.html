@@ -29,14 +29,14 @@
       <div class="col-md-3 brd-homepage-sidebar">
         <h4>Category</h4>
         {{#let _category = (state.get 'category') }}
-        <div class="sidebar-list">
+        <div class="sidebar-list" style="height: 500px;">
           {{#each _category}}
           <a href="/category/{{_id}}" class="sidebar-list-item">{{title}}</a>
           {{/each}}
         </div>
         {{/let}}
         <h4>Tags</h4>
-        <div class="sidebar-list">
+        <div class="sidebar-list" style="height: 500px;">
           {{#each _tags}}
           <a href="/tags/{{this}}" class="sidebar-list-item">{{this}}</a>
           {{/each}}
